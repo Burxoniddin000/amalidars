@@ -1,0 +1,130 @@
+.sitx-main {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+
+
+.hero {
+    margin-top: 48px;
+}
+
+.hero__inner-taxt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.name {
+    display: inline-block;
+    max-width: 480px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #848484;
+    padding: 18px 270px 18px 74px;
+    border: 2px solid transparent;
+}
+
+.input__select {
+    padding: 18px 48px 18px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111517;
+    border: radius 15px;
+    border: 2px solid transparent;
+}
+
+@media screen and (max-width:700px) {
+    .sitx-main {
+        max-width: 375px;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .input__select {
+        margin-top: 40px;
+        margin-bottom: 32px;
+        display: flex;
+
+    }
+
+    .name {
+        max-width: 343px;
+        height: 48px;
+
+    }
+
+}
+
+//================================================
+
+.hero__link {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
+    border-radius: 5px;
+    max-width: 264px;
+    padding-bottom: 48px;
+}
+
+.hero__text {
+    margin-left: 24px;
+}
+
+.hero__text h2 {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 26px;
+    color: #111517;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.hero__text p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #111517a1;
+    padding: 8px 0;
+}
+
+.hero__span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #111517;
+}
+
+@media screen and (max-width:700px) {
+    .hero {
+        max-width: 375px;
+        margin: 0 auto;
+    }
+
+    .hero__inner-taxt {
+        display: inline-block;
+    }
+
+    .hero__link+.hero__link {
+        margin-top: 40px;
+    }
+
+}
