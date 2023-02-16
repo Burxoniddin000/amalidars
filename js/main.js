@@ -13,10 +13,10 @@ fetch('https://restcountries.com/v3.1/all')
 
 
 function radom(array) {
-    ul.textContent=""
+    ul.textContent = ""
     array.forEach((arr) => {
         let li = document.createElement("li");
-        li.className="bg-light"
+        li.className = "bg-light"
         li.id = "hero__link"
         li.innerHTML = `
         <img class="imge" src="${arr.flags.png}">
@@ -30,40 +30,54 @@ function radom(array) {
             <a href="${arr.maps.googleMaps}">maps</a>
         </div>`
         ul.appendChild(li)
-       
+
         darmod.addEventListener('click', () => {
             if (them === "dark") {
                 them = 'light';
-               li.className="bg-dark"
-           
+                li.className = "bg-dark"
+
             } else if (them == "light") {
                 them = 'dark';
-                li.className="bg-light"
-        
+                li.className = "bg-light"
+
             }
         })
     })
-   
+
 }
+let erro = document.querySelector('.erro')
 
+elinput.addEventListener('input', () => {
+    fetch('https://restcountries.com/v3.1/name/' + elinput.value)
+        .then((res) => res.json())
+        .then((data) => {
 
-elinput.addEventListener('input',()=>{
-    fetch('https://restcountries.com/v3.1/name/'+elinput.value)
-    .then((res) => res.json())
-    .then((data) => {
-        
-        radom(data)
-    })
+            radom(data)
+        })
 })
-let  header = document.querySelector(".sitx-header")
-let  link = document.querySelector(".link")
-let  model = document.querySelector(".sitx-header__moder")
-let  cars = document.querySelector("#cars")
-let  sun = document.querySelector("#sun")
-let  mon = document.querySelector("#mon")
+let header = document.querySelector(".sitx-header")
+let link = document.querySelector(".link")
+let model = document.querySelector(".sitx-header__moder")
+let cars = document.querySelector("#cars")
+let sun = document.querySelector("#sun")
+let mon = document.querySelector("#mon")
 
 
-
+cars.addEventListener("change", () => {
+    if (cars.value == 'All') {
+        fetch('https://restcountries.com/v3.1/all')
+            .then((res) => res.json())
+            .then((data) => {
+                radom(data)
+            })
+    }else {
+        fetch('https://restcountries.com/v3.1/region/' + cars.value)
+            .then((res) => res.json())
+            .then((data) => {
+                radom(data)
+            })
+    }
+})
 
 darmod.addEventListener('click', () => {
     if (them === "dark") {
@@ -73,13 +87,13 @@ darmod.addEventListener('click', () => {
         elinput.style.background = ("#fff")
         ul.style.background = ("#fff")
         elinput.style.color = ("#000")
-        elinput.style.border= ("2px solid none")
+        elinput.style.border = ("2px solid none")
         cars.style.background = ("#fff")
         cars.style.color = ("#000")
         link.style.color = ("#000")
         model.style.color = ("#000")
-        sun.style.display= ("none")
-        mon.style.display= ("block")
+        sun.style.display = ("none")
+        mon.style.display = ("block")
 
     } else if (them == "light") {
         document.body.style.background = "#212529"
@@ -88,13 +102,13 @@ darmod.addEventListener('click', () => {
         ul.style.background = ("#212529")
         elinput.style.color = ("#fff")
         cars.style.background = ("#212529")
-        elinput.style.border= ("2px solid #fff")
+        elinput.style.border = ("2px solid #fff")
         cars.style.color = ("#fff")
         header.style.background = ("#212529")
         link.style.color = ("#fff")
-        model.style.color = ("#fff") 
-        mon.style.display= ("none")
-        sun.style.display= ("block")
+        model.style.color = ("#fff")
+        mon.style.display = ("none")
+        sun.style.display = ("block")
     }
 })
 
