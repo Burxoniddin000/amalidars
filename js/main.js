@@ -54,7 +54,6 @@ darmod.addEventListener('click', () => {
     if (them === "dark") {
         document.body.style.background = "#fff"
         them = 'light';
-
         header.style.background = ("#fff")
         elinput.style.background = ("#fff")
         ul.style.background = ("#fff")
@@ -76,7 +75,7 @@ darmod.addEventListener('click', () => {
         cars.style.color = ("#fff")
         header.style.background = ("#212529")
         link.style.color = ("#fff")
-        model.style.color = ("#fff")
+        model.style.color = ("#fff") 
     }
 })
 
