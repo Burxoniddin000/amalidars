@@ -8,6 +8,7 @@ let elli = document.querySelector(".hero__link")
 fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
     .then((data) => {
+
         radom(data)
     })
 
@@ -21,31 +22,26 @@ function radom(array) {
         li.innerHTML = `
         <img class="imge" src="${arr.flags.png}">
         <div class="hero__text">
-            <h2 id="name2">${arr.name.common}</h2>
+            <h2 class="card-title1" id="name2">${arr.name.common}</h2>
+            <div class="nam">
             <p> <span class="hero__span">Population:</span>${arr.population}</p>
             <p>
                 <span class="hero__span"> Region: </span>${arr.region}
             </p>
             <p> <span class="hero__span"> Capital:</span>${arr.capital}</p>
             <a href="${arr.maps.googleMaps}">maps</a>
-        </div>`
+            </div>
+        </div>
+        <hr>
+        `
+        
         ul.appendChild(li)
 
-        darmod.addEventListener('click', () => {
-            if (them === "dark") {
-                them = 'light';
-                li.className = "bg-dark"
 
-            } else if (them == "light") {
-                them = 'dark';
-                li.className = "bg-light"
-
-            }
-        })
     })
 
 }
-let erro = document.querySelector('.erro')
+
 
 elinput.addEventListener('input', () => {
     fetch('https://restcountries.com/v3.1/name/' + elinput.value)
@@ -70,7 +66,7 @@ cars.addEventListener("change", () => {
             .then((data) => {
                 radom(data)
             })
-    }else {
+    } else {
         fetch('https://restcountries.com/v3.1/region/' + cars.value)
             .then((res) => res.json())
             .then((data) => {
@@ -78,6 +74,8 @@ cars.addEventListener("change", () => {
             })
     }
 })
+
+
 
 darmod.addEventListener('click', () => {
     if (them === "dark") {
@@ -94,9 +92,12 @@ darmod.addEventListener('click', () => {
         model.style.color = ("#000")
         sun.style.display = ("none")
         mon.style.display = ("block")
+        document.body.className = ('body-dark1')
+
 
     } else if (them == "light") {
         document.body.style.background = "#212529"
+        document.body.className = ('body-dark')
         them = 'dark';
         elinput.style.background = ("#212529")
         ul.style.background = ("#212529")
